@@ -1,0 +1,84 @@
+***********************************************************************************************
+* Programa CropSim
+* Arquivo com dados da cultura
+* Milho (Zea mays)
+***********************************************************************************************
+* Parte 1: Coeficiente da cultura Kc em função do estágio de desenvolvimento DVS (6 valores)
+DVS   Kc
+0.0   0.4
+0.3   0.8
+0.6   1.1
+1.0   1.2
+1.4   1.1
+2.0   0.9
+
+***********************************************************************************************
+* Parte 2 : Soma térmica
+795.0 ! Soma térmica da emergéncia até antese (Tsum1)
+900.0 ! Soma térmica da antese até maturidade (Tsum2)
+6.0    ! Temperatura basal (Tb)
+
+***********************************************************************************************
+* Parte 3: Valores iniciais
+50   ! Massa seca total inicial [kg/ha] (MSi)
+0.048   ! IAF inicial [m2/m2] (IAFi)
+
+***********************************************************************************************
+* Parte 4: área foliar
+50    ! Vida útil das folhas em condições ótimas [d] (Vida)
+0.0035   ! Área foliar especéfica [ha/kg] (SLA1)
+0.002   ! Área foliar especéfica [ha/kg] (SLA2)
+
+***********************************************************************************************
+* Part 5: Assimilação
+0.70 ! Coeficiente de extinção (Kext)
+2.75 ! Radiation use efficiency [g/MJ] (RUE)
+
+* Taxa máxima de assimilação de CO2 AMAX [kg/ha/h] em função de DVS (6 valores)
+DVS    AMAX 
+0.00   70.0
+1.00   70.0
+1.25   70.0
+1.50   63.0
+1.75   49.0
+2.00   21.0
+
+* Fator de redu��o de AMAX (Famax) em fun��o da temperatura m�dia (7 valores)
+Tmed   Famax
+9.0    0.05
+16.0   0.80
+18.0   0.94
+20.0   1.00
+30.0   1.00
+36.0   0.95
+42.0   0.56
+
+***********************************************************************************************
+* Parte 6: Conversão de assimilados em biomassa (EC0..3)
+0.6800 ! Eficiéncia da conversão em folhas [kg/kg]   (EC[0])
+0.6900 ! Eficiéncia da conversãoem raézes [kg/kg]   (EC[1])
+0.6580 ! Eficiéncia da conversão em caule [kg/kg]    (EC[2])
+0.6710 ! Eficiéncia da conversão em sementes [kg/kg] (EC[3])
+
+***********************************************************************************************
+* Parte 7: Respiração de manutenção a 20 ºC  (fRM0..3)
+2.000   ! Aumento da taxa de respiração por 10 graus de incremento na temperatura (Q10)
+0.030   ! Respiração relativa de manutençãoo das folhas [kgCH2O/kg/d] (fRM[0])
+0.015   ! Respiração relativa de manutençãoo das raízes [kgCH2O/kg/d] (fRM[1])
+0.015   ! Respiração relativa de manutençãoo dos caule  [kgCH2O/kg/d] (fRM[2])
+0.010   ! Respiração relativa de manutençãoo das sementes [kgCH2O/kg/d] (fRM[3])
+
+***********************************************************************************************
+* Parte 8: Partição : Fraão do matéria seca total destinada às folhas (F0), 
+                 raízes (F1), caule (F2) e sementes (F3) [kg/kg], em função do FDVS (7 valores)
+FDVS   F0    F1    F2    F3
+0.0   0.37  0.4   0.23  0.0
+0.33  0.43  0.3   0.27  0.0
+0.88  0.14  0.07  0.79  0.0
+0.95  0.15  0.0   0.85  0.0
+1.1   0.1   0.0   0.4   0.5
+1.2   0.0   0.0   0.0   1.0
+2.1   0.0   0.0   0.0   1.0
+
+***********************************************************************************************
+* Fim do Arquivo
